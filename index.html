@@ -7,8 +7,8 @@
     <title>Document</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
-    defer ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" defer>
+    </script>
     <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
         defer></script>
     <link rel="stylesheet" href="style.css">
@@ -42,13 +42,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-2 ">
-                    <h5>amount per click</h5>
+                    <h5 id="potatoesPerClick">ppc</h5>
                 </div>
                 <div class="col-4 text-center">
-                    <h5>balance</h5>
+                    <h5 id="balance">balance</h5>
                 </div>
                 <div class="col-2 text-end">
-                    <h5> pps</h5>
+                    <h5 id="potatoesPerSecond">pps</h5>
                 </div>
             </div>
         </div>
@@ -62,14 +62,14 @@
                             <div>
                                 <p>Click Upgrades</p>
                                 <div class="d-flex">
-                                    <button> 50 <i class="mdi mdi-french-fries"></i> </button>
+                                    <button onclick="buyClickUpgrade(0)"> 50 <i class="mdi mdi-seed"></i> </button>
                                     <div class="d-flex flex-column">
-                                        <p>shovel</p>
+                                        <p>watering can</p>
                                         <p>+1</p>
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <button> 500 <i class="mdi mdi-french-fries"></i> </button>
+                                    <button onclick="buyClickUpgrade(1)"> 500 <i class="mdi mdi-seed"></i> </button>
                                     <div class="d-flex flex-column">
                                         <p>shovel</p>
                                         <p>+5</p>
@@ -81,14 +81,16 @@
                             <div>
                                 <p>AUTOMATIC UPGRADES</p>
                                 <div class="d-flex">
-                                    <button> 500 <i class="mdi mdi-french-fries"></i> </button>
+                                    <button onclick="buyAutomaticUpgrade(0)"> 500 <i class=" mdi mdi-french-fries"></i>
+                                    </button>
                                     <div class="d-flex flex-column">
                                         <p>worker</p>
                                         <p>+1 pps</p>
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <button> 5000 <i class="mdi mdi-french-fries"></i> </button>
+                                    <button onclick="buyAutomaticUpgrade(1)"> 5000 <i class=" mdi mdi-french-fries"></i>
+                                    </button>
                                     <div class="d-flex flex-column">
                                         <p>tractor</p>
                                         <p>+5 pps</p>
