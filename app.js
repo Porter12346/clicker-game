@@ -1,4 +1,4 @@
-let currentBalance = 5000
+let currentBalance = 0
 let currentPotatoesPerSecond = 0
 let currentPotatoesPerClick = 1
 let lifetimePotatoes = 0
@@ -6,13 +6,13 @@ let lifetimePotatoes = 0
 let clickUpgrades = [
     {
         name: 'wateringCan',
-        price: 50,
+        price: 25,
         quantity: 0,
         multiplier: 1
     },
     {
         name: 'shovel',
-        price: 500,
+        price: 250,
         quantity: 0,
         multiplier: 5
     }
@@ -21,15 +21,15 @@ let clickUpgrades = [
 let automaticUpgrades = [
     {
         name: 'worker',
-        price: 200,
+        price: 15,
         quantity: 0,
         multiplier: 1
     },
     {
         name: 'tractor',
-        price: 2000,
+        price: 1500,
         quantity: 0,
-        multiplier: 5
+        multiplier: 15
     }
 ];
 
@@ -42,6 +42,7 @@ function clickPotato() {
 
 function drawBalance() {
     document.getElementById('balance').innerHTML = `${potatoIcon} : ${currentBalance.toFixed(0)}`
+    document.getElementById('lifetime').innerHTML = `Lifetime Potatoes: ${lifetimePotatoes.toFixed(0)}`
 }
 
 function drawPotatoesPerClick() {
@@ -68,7 +69,7 @@ function buyClickUpgrade(upgradeIndex) {
 
         quantity++
         currentBalance -= price
-        let newPrice = (price * (quantity / 15))
+        let newPrice = (price * (quantity / 5))
         price += Number(newPrice.toFixed(0))
 
         clickUpgrades[upgradeIndex].price = price
@@ -89,7 +90,7 @@ function buyAutomaticUpgrade(upgradeIndex) {
 
         quantity++
         currentBalance -= price
-        let newPrice = (price * (quantity / 15))
+        let newPrice = (price * (quantity / 7))
         price += Number(newPrice.toFixed(0))
 
         automaticUpgrades[upgradeIndex].price = price
@@ -121,6 +122,7 @@ function calculatePotatoesPerSecond() {
 
 function addCookiesPerSecond() {
     currentBalance += (currentPotatoesPerSecond / 10)
+    lifetimePotatoes += (currentPotatoesPerSecond / 10)
     drawBalance()
 }
 
