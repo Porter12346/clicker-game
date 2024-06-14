@@ -1,9 +1,15 @@
 .potato:hover {
     scale: 1.03;
+    filter: drop-shadow(0 0 1.75rem green);
 }
 
 .potato:active {
     scale: 1;
+    filter: drop-shadow(0 0 1.25rem green);
+}
+
+.potato {
+    filter: drop-shadow(0 0 1.75rem white);
 }
 
 .potato-bg-img {
