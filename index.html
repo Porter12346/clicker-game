@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Potato Clicker</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" defer>
@@ -66,7 +66,7 @@
                                         class="btn btn-primary px-4 my-3"> 50 <i class="mdi mdi-seed"></i>
                                     </button>
                                     <div class="d-flex flex-column px-1">
-                                        <p>watering can</p>
+                                        <p class="mb-2">watering can</p>
                                         <p>+1</p>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                         onclick="buyClickUpgrade(1)"></button>
                                     </button>
                                     <div class="d-flex flex-column px-1">
-                                        <p>shovel</p>
+                                        <p class="mb-2">shovel</p>
                                         <p>+5</p>
                                     </div>
                                 </div>
@@ -88,8 +88,8 @@
                                     <button class="btn btn-success px-4 my-3" id="worker"
                                         onclick="buyAutomaticUpgrade(0)"> 500 <i class=" mdi mdi-french-fries"></i>
                                     </button>
-                                    <div class="d-flex flex-column px-1">
-                                        <p>worker</p>
+                                    <div class="d-flex flex-column justify-content-center align-items-center px-1">
+                                        <p class="mb-2">worker</p>
                                         <p>+1 pps</p>
                                     </div>
                                 </div>
@@ -97,8 +97,8 @@
                                     <button class="btn btn-success px-4 my-3" id="tractor"
                                         onclick="buyAutomaticUpgrade(1)"> 5000 <i class=" mdi mdi-french-fries"></i>
                                     </button>
-                                    <div class="d-flex flex-column align-items-center justify-content-center px-1">
-                                        <p>tractor</p>
+                                    <div class="d-flex flex-column justify-content-center align-items-center px-1">
+                                        <p class="mb-2">tractor</p>
                                         <p>+15 pps</p>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
                                         <p id="shovelQuantity" class="border">0</p>
-                                        <p class="px-3">shovels</p>
+                                        <p class="px-3">Shovels</p>
                                     </div>
                                     <div class="d-flex">
                                         <i class="mdi mdi-arrow-right-bold"></i>
@@ -143,7 +143,7 @@
                                     <div class="d-flex justify-content-between py-4">
                                         <div class="d-flex">
                                             <p id="workerQuantity" class="border">0</p>
-                                            <p class="px-3">workers</p>
+                                            <p class="px-3">Workers</p>
                                         </div>
                                         <div class="d-flex">
                                             <i class="mdi mdi-arrow-right-bold"></i>
@@ -154,7 +154,7 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
                                         <p id="tractorQuantity" class="border">0</p>
-                                        <p class="px-3">shovels</p>
+                                        <p class="px-3">Tractors</p>
                                     </div>
                                     <div class="d-flex">
                                         <i class="mdi mdi-arrow-right-bold"></i>
@@ -168,7 +168,7 @@
             </div>
         </div>
         <footer>
-            <h2 id="lifetime" class="text-center pt-5">Lifetime Potatoes: 0</h2>
+            <h2 id="lifetime" class="text-center pt-4">Lifetime Potatoes: 0</h2>
         </footer>
     </main>
 </body>

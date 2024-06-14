@@ -2,6 +2,10 @@ let currentBalance = 0
 let currentPotatoesPerSecond = 0
 let currentPotatoesPerClick = 1
 let lifetimePotatoes = 0
+let saveData = true
+const isLoaded = localStorage.getItem("savedCurrentBalance");
+
+
 
 let clickUpgrades = [
     {
@@ -33,11 +37,47 @@ let automaticUpgrades = [
     }
 ];
 
+if (Number(isLoaded) > 0) {
+    loadGameState()
+}
+
 const potatoIcon = '<i class="mdi mdi-seed"></i>'
+
 function clickPotato() {
     currentBalance += currentPotatoesPerClick
     lifetimePotatoes += currentPotatoesPerClick
     drawBalance()
+}
+
+function dontSaveMyData() {
+    saveData = false
+    console.log("fine i guess i wont save your data")
+}
+
+function loadGameState() {
+    clickUpgrades = JSON.parse(localStorage.getItem('clickUpgrades'))
+    automaticUpgrades = JSON.parse(localStorage.getItem('automaticUpgrades'))
+    const loadedBalance = localStorage.getItem("savedCurrentBalance");
+    currentBalance = Number(loadedBalance)
+    const loadedLifetimePotatoes = localStorage.getItem("savedLifetimePotatoes");
+    lifetimePotatoes = Number(loadedLifetimePotatoes)
+    currentPotatoesPerClick = calculatePotatoesPerClick()
+    currentPotatoesPerSecond = calculatePotatoesPerSecond()
+    drawStats()
+
+}
+
+function saveGameState() {
+    localStorage.setItem('clickUpgrades', JSON.stringify(clickUpgrades))
+    localStorage.setItem('automaticUpgrades', JSON.stringify(automaticUpgrades))
+    // clickUpgrades.forEach((upgrade) => {
+    //     localStorage.setItem(`${upgrade.name}`, JSON.stringify(upgrade));
+    // });
+    // automaticUpgrades.forEach((upgrade) => {
+    //     localStorage.setItem(`${upgrade.name}`, JSON.stringify(upgrade));
+    // });
+    localStorage.setItem("savedCurrentBalance", String(currentBalance));
+    localStorage.setItem("savedLifetimePotatoes", String(lifetimePotatoes));
 }
 
 function drawBalance() {
@@ -145,8 +185,15 @@ function drawStats() {
     });
 }
 
+window.onbeforeunload = function () {
+    if (saveData) {
+        saveGameState()
+    }
+}
+
 drawBalance()
 drawPotatoesPerClick()
 drawPotatoesPerSecond()
+drawStats()
 
 setInterval(addCookiesPerSecond, 100)
