@@ -77,6 +77,7 @@ function buyClickUpgrade(upgradeIndex) {
     }
     currentPotatoesPerClick = calculatePotatoesPerClick()
     drawPotatoesPerClick()
+    drawStats()
 
 }
 
@@ -97,6 +98,7 @@ function buyAutomaticUpgrade(upgradeIndex) {
     }
     currentPotatoesPerSecond = calculatePotatoesPerSecond()
     drawPotatoesPerSecond()
+    drawStats()
 
 }
 
@@ -122,9 +124,24 @@ function addCookiesPerSecond() {
     drawBalance()
 }
 
-// function drawStats(){
+function drawStats() {
+    clickUpgrades.forEach((upgrade) => {
+        let QuantityIdName = `${upgrade.name}Quantity`
+        let ValueIdName = `${upgrade.name}Value`
+        document.getElementById(`${QuantityIdName}`).innerText = `${upgrade.quantity}x`
 
-// }
+        let value = upgrade.quantity * upgrade.multiplier
+        document.getElementById(`${ValueIdName}`).innerText = `${value}`
+    });
+    automaticUpgrades.forEach((upgrade) => {
+        let QuantityIdName = `${upgrade.name}Quantity`
+        let ValueIdName = `${upgrade.name}Value`
+        document.getElementById(`${QuantityIdName}`).innerText = `${upgrade.quantity}x`
+
+        let value = upgrade.quantity * upgrade.multiplier
+        document.getElementById(`${ValueIdName}`).innerText = `${value}`
+    });
+}
 
 drawBalance()
 drawPotatoesPerClick()
