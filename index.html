@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="py-5">
-                        <img draggable="false" role="button" onclick="clickPotato()"
+                        <img draggable="false" role="button" onclick="clickPotato()" class="potato"
                             src="https://pngimg.com/uploads/potato/small/potato_PNG7078.png" alt="THE POTATO">
                     </div>
                 </div>
@@ -62,17 +62,19 @@
                             <div>
                                 <p>Click Upgrades</p>
                                 <div class="d-flex">
-                                    <button id="wateringCan" onclick="buyClickUpgrade(0)"> 50 <i
-                                            class="mdi mdi-seed"></i> </button>
-                                    <div class="d-flex flex-column">
+                                    <button id="wateringCan" onclick="buyClickUpgrade(0)"
+                                        class="btn btn-primary px-4 my-3"> 50 <i class="mdi mdi-seed"></i>
+                                    </button>
+                                    <div class="d-flex flex-column px-1">
                                         <p>watering can</p>
                                         <p>+1</p>
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <button id="shovel" onclick="buyClickUpgrade(1)"> 500 <i class="mdi mdi-seed"></i>
+                                    <button class="btn btn-primary px-4 my-3" id="shovel"
+                                        onclick="buyClickUpgrade(1)"></button>
                                     </button>
-                                    <div class="d-flex flex-column">
+                                    <div class="d-flex flex-column px-1">
                                         <p>shovel</p>
                                         <p>+5</p>
                                     </div>
@@ -83,19 +85,19 @@
                             <div>
                                 <p>AUTOMATIC UPGRADES</p>
                                 <div class="d-flex">
-                                    <button id="worker" onclick="buyAutomaticUpgrade(0)"> 500 <i
-                                            class=" mdi mdi-french-fries"></i>
+                                    <button class="btn btn-primary px-4 my-3" id="worker"
+                                        onclick="buyAutomaticUpgrade(0)"> 500 <i class=" mdi mdi-french-fries"></i>
                                     </button>
-                                    <div class="d-flex flex-column">
+                                    <div class="d-flex flex-column px-1">
                                         <p>worker</p>
                                         <p>+1 pps</p>
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <button id="tractor" onclick="buyAutomaticUpgrade(1)"> 5000 <i
-                                            class=" mdi mdi-french-fries"></i>
+                                    <button class="btn btn-primary px-4 my-3" id="tractor"
+                                        onclick="buyAutomaticUpgrade(1)"> 5000 <i class=" mdi mdi-french-fries"></i>
                                     </button>
-                                    <div class="d-flex flex-column">
+                                    <div class="d-flex flex-column align-items-center justify-content-center px-1">
                                         <p>tractor</p>
                                         <p>+5 pps</p>
                                     </div>
@@ -107,63 +109,63 @@
                 <!-- ANCHOR Stats -->
                 <div class="col-6">
                     <div class="row">
-                        <div class="col-6 d-flex justify-content-between">
-                            <div>
-                                <p>Click Stats</p>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex">
-                                        <p id="wateringCanQuantity" class="border">0</p>
-                                        <p>watering Cans</p>
-                                    </div>
-                                    <div class="d-flex">
-                                        <i class="mdi mdi-arrow-right-bold"></i>
-                                        <p id="wateringCanValue" class="border">0</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
+                        <div class="col-6">
+                            <div class="px-3">
+                                <div>
+                                    <p>Click Stats</p>
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <p id="shovelQuantity" class="border">0</p>
-                                            <p>Shovels</p>
+                                            <p id="wateringCanQuantity" class="border">0</p>
+                                            <p class="px-3">Watering Cans</p>
                                         </div>
                                         <div class="d-flex">
                                             <i class="mdi mdi-arrow-right-bold"></i>
-                                            <p id="shovelValue" class="border">0</p>
+                                            <p id="wateringCanValue" class="border">0</p>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex">
+                                        <p id="shovelQuantity" class="border">0</p>
+                                        <p class="px-3">shovels</p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <i class="mdi mdi-arrow-right-bold"></i>
+                                        <p id="shovelValue" class="border">0</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div>
-                                <p>AUTOMATIC Stats</p>
+                            <div class="px-3">
+                                <div>
+                                    <p>AUTOMATIC Stats</p>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex">
+                                            <p id="workerQuantity" class="border">0</p>
+                                            <p class="px-3">workers</p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="mdi mdi-arrow-right-bold"></i>
+                                            <p id="workerValue" class="border">0</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="d-flex justify-content-between">
                                     <div class="d-flex">
-                                        <p id="workerQuantity" class="border">0</p>
-                                        <p>workers</p>
+                                        <p id="tractorQuantity" class="border">0</p>
+                                        <p class="px-3">shovels</p>
                                     </div>
                                     <div class="d-flex">
                                         <i class="mdi mdi-arrow-right-bold"></i>
-                                        <p id="workerValue" class="border">0</p>
+                                        <p id="tractorValue" class="border">0</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <p id="tractorQuantity" class="border">0</p>
-                                    <p>shovels</p>
-                                </div>
-                                <div class="d-flex">
-                                    <i class="mdi mdi-arrow-right-bold"></i>
-                                    <p id="tractorValue" class="border">0</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
         </div>
     </main>
 </body>

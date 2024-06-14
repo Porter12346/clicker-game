@@ -1,0 +1,7 @@
+.potato:hover {
+    scale: 1.03;
+}
+
+.potato:active {
+    scale: 1;
+}
