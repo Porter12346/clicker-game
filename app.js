@@ -21,13 +21,13 @@ let clickUpgrades = [
 let automaticUpgrades = [
     {
         name: 'worker',
-        price: 500,
+        price: 200,
         quantity: 0,
         multiplier: 1
     },
     {
         name: 'tractor',
-        price: 5000,
+        price: 2000,
         quantity: 0,
         multiplier: 5
     }
@@ -41,15 +41,23 @@ function clickPotato() {
 }
 
 function drawBalance() {
-    document.getElementById('balance').innerHTML = `${potatoIcon} : ${currentBalance}`
+    document.getElementById('balance').innerHTML = `${potatoIcon} : ${currentBalance.toFixed(0)}`
 }
 
 function drawPotatoesPerClick() {
     document.getElementById('potatoesPerClick').innerHTML = `<i class="mdi mdi-cursor-pointer"></i> : ${currentPotatoesPerClick}`
+    clickUpgrades.forEach((upgrade) => {
+        document.getElementById(upgrade.name).innerHTML = `${upgrade.price} <i class="mdi mdi-seed"></i>`
+    });
+    drawBalance()
 }
 
 function drawPotatoesPerSecond() {
     document.getElementById('potatoesPerSecond').innerHTML = `<i class="mdi mdi-timer"></i> : ${currentPotatoesPerSecond}`
+    automaticUpgrades.forEach((upgrade) => {
+        document.getElementById(upgrade.name).innerHTML = `${upgrade.price} <i class="mdi mdi-seed"></i>`
+    });
+    drawBalance()
 }
 
 function buyClickUpgrade(upgradeIndex) {
@@ -109,7 +117,17 @@ function calculatePotatoesPerSecond() {
     drawPotatoesPerSecond()
 }
 
+function addCookiesPerSecond() {
+    currentBalance += (currentPotatoesPerSecond / 10)
+    drawBalance()
+}
+
+// function drawStats(){
+
+// }
 
 drawBalance()
 drawPotatoesPerClick()
 drawPotatoesPerSecond()
+
+setInterval(addCookiesPerSecond, 100)
